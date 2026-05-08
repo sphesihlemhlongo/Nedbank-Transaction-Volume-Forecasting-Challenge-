@@ -1,0 +1,38 @@
+File,Column,Type,Description
+Train.csv,UniqueID,string,Unique customer identifier (UUID format)
+Train.csv,next_3m_txn_count,integer,Target variable: total number of bank transactions in Nov 2015 – Jan 2016
+Test.csv,UniqueID,string,Unique customer identifier — predict next_3m_txn_count for these customers
+SampleSubmission.csv,UniqueID,string,Must match Test.csv UniqueIDs exactly
+SampleSubmission.csv,next_3m_txn_count,integer,Your predicted transaction count (non-negative integer or float)
+transactions_features.parquet,UniqueID,string,Customer identifier — join key to Train/Test
+transactions_features.parquet,AccountID,string,Bank account identifier — a customer may have multiple accounts
+transactions_features.parquet,TransactionDate,timestamp,Date the transaction occurred. All dates are BEFORE the prediction window.
+transactions_features.parquet,TransactionAmount,float,Signed transaction amount in ZAR
+transactions_features.parquet,TransactionTypeDescription,string,"Transaction category (13 types: Transfers & Payments, Charges & Fees, etc.)"
+transactions_features.parquet,TransactionBatchDescription,string,Batch processing category (8 types)
+transactions_features.parquet,StatementBalance,float,Running account balance after this transaction
+transactions_features.parquet,IsDebitCredit,string,"D = Debit (money out), C = Credit (money in)"
+transactions_features.parquet,ReversalTypeDescription,string,Reversal type if this transaction was reversed
+financials_features.parquet,UniqueID,string,Customer identifier — join key
+financials_features.parquet,AccountID,string,Account identifier (14.4% null overall; 100% null for Mortgages product)
+financials_features.parquet,RunDate,timestamp,Snapshot date for this financial record
+financials_features.parquet,Product,string,"Product category: Transactional, Investments, or Mortgages"
+financials_features.parquet,NetInterestIncome,float,Net interest income for this account/period
+financials_features.parquet,NetInterestRevenue,float,Net interest revenue (NII + fee adjustments)
+demographics_clean.parquet,UniqueID,string,Customer identifier — join key
+demographics_clean.parquet,BirthDate,timestamp,Date of birth of the customer. Note: data quality varies — treat accordingly.
+demographics_clean.parquet,Gender,string,M or F (whitespace cleaned)
+demographics_clean.parquet,IncomeCategory,string,"Income bracket: Low, Lower-Middle, Middle, Upper-Middle, High, Very High, No Income, or Not Disclosed"
+demographics_clean.parquet,CustomerStatus,string,Customer lifecycle status
+demographics_clean.parquet,ClientType,string,"Client classification (Individual – Adult, Foreign Individual, etc.)"
+demographics_clean.parquet,MaritalStatus,string,"Single, Married, Divorced, or Widowed"
+demographics_clean.parquet,OccupationCategory,string,Occupation grouping (19 categories)
+demographics_clean.parquet,IndustryCategory,string,Industry grouping (18 categories)
+demographics_clean.parquet,CustomerBankingType,string,Primary/Secondary/Main banking relationship (3.4% null)
+demographics_clean.parquet,CustomerOnboardingChannel,string,Channel used to onboard customer (<0.1% null)
+demographics_clean.parquet,ResidentialCityName,string,Customer residential city
+demographics_clean.parquet,CountryCodeNationality,string,ISO country code of nationality
+demographics_clean.parquet,AnnualGrossIncome,float,Annual gross income in ZAR (6.2% null)
+demographics_clean.parquet,LowIncomeFlag,string,Low income classification flag
+demographics_clean.parquet,CertificationTypeDescription,string,"ID document type (RSA ID, Passport, etc.)"
+demographics_clean.parquet,ContactPreference,string,Contact consent preference

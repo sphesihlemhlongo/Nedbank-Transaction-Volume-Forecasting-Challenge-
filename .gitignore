@@ -1,0 +1,34 @@
+.vscode
+.venv/
+__pycache__/
+outputs/
+submission_baseline_polars*.csv
+transactions.parquet
+docs/
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+*.zip
+*.tar.gz
+*.egg-info/
+*.egg
+dist/
+build/
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.dll
+transations_features/
+financials_features/
+demographics_clean/
+Data/
+docs\communications/
+Data.zip
+# parquet datasets
+*.parquet
+
+# feature engineering outputs
+transactions_features/
