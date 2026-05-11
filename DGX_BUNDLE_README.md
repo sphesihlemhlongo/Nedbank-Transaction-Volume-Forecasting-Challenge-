@@ -1,4 +1,4 @@
-# DGX Bundle
+# Bundle
 
 This bundle is the portable handoff package for running the current Nedbank competition search on a stronger machine.
 
