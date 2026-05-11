@@ -1,4 +1,4 @@
-# DGX Agent Prompt
+# Agent Prompt
 
 You are inheriting a live competition repo for the Nedbank Transaction Volume Forecasting Challenge.
 
